@@ -1,3 +1,5 @@
+# core app dependencies
+
 altair
 asttokens
 attrs
@@ -88,3 +90,67 @@ widgetsnbextension
 win-inet-pton
 wincertstore==0.2
 zipp
+
+# llama index dependencies
+
+regex
+pydantic
+mypy-extensions
+marshmallow
+greenlet
+typing-inspect
+tiktoken
+SQLAlchemy
+openapi-schema-pydantic
+marshmallow-enum
+aiohttp
+dataclasses_json
+gptcache
+langchain
+llama-index
+
+# huggingface hub dependencies
+
+filelock
+fsspec
+huggingface_hub
+
+# openai dependencies
+
+aiosignal
+appdirs
+async-timeout
+cycler
+docker-pycreds
+et_xmlfile
+frozenlist
+joblib
+kiwisolver
+m2w64-gcc-libgfor~ # causes streamlit error
+m2w64-gcc-libs
+m2w64-gcc-libs-co~
+m2w64-gmp
+m2w64-libwinpthre~
+matplotlib-base
+msys2-conda-epoch
+multidict
+openai
+openpyxl
+pandas-stubs
+pathtools
+plotly
+pyparsing
+scikit-learn
+scipy
+sentry-sdk
+setproctitle
+tenacity
+threadpoolctl
+tqdm
+types-pytz
+typing-extensions
+wandb
+yarl 
+
+# streamlit_chat dependencies
+streamlit-chat

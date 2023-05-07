@@ -253,7 +253,7 @@ start_time = time.perf_counter()
 ### Simple vector index (best for semantic / top-k search; ie. queries 'cherry-pick' indexed data)
 ## Create a llama-index object from list of documents in Document format
 #@st.cache_resource # cache function to prevent rerun on user input
-def build_index(news_list_of_dicts, mock_service_context, use_async=True):
+def build_index(news_list_of_dicts, service_context, use_async=True):
     
     # convert list of dictionaries to list of documents with Document format for indexing
     documents = []
@@ -266,7 +266,7 @@ def build_index(news_list_of_dicts, mock_service_context, use_async=True):
 
     # build index
     vector_index = GPTSimpleVectorIndex.from_documents(nodes, # "documents" or "nodes"
-                                                       service_context=mock_service_context,
+                                                       service_context=service_context,
                                                        use_async=use_async # improve performance
                                                        )
     return vector_index
@@ -295,7 +295,7 @@ start_time = time.perf_counter()
 
 ## Chat settings
 # Define function to pass user input to llm and query index
-def conversational_chat(user_question, QA_PROMPT):
+def conversational_chat(user_question, QA_PROMPT, service_context):
 
     llm_response = index.query(
         user_question,
@@ -323,7 +323,7 @@ if 'past' not in st.session_state:
     st.session_state['past'] = ["..."]
         
 # Containers for the chat history
-response_container = st.container() # bot responses
+response_container = st.container() # chat history
 container = st.container() # user inputs
 
 ## Load Chat UI on session start
@@ -333,7 +333,7 @@ with container:
         submit_button = st.form_submit_button(label='Envia')
 
     if submit_button and user_input:
-        output = conversational_chat(user_input, QA_PROMPT) # not ideal, revisit
+        output = conversational_chat(user_input, QA_PROMPT, mock_service_context) # not ideal, revisit
 
         st.session_state['past'].append(user_input)
         st.session_state['generated'].append(output)
@@ -341,9 +341,11 @@ with container:
 # display session chat sequence
 if st.session_state['generated']:
     with response_container:
-        for i in range(len(st.session_state['generated'])):
-            message(st.session_state["past"][i], is_user=True, key=str(i) + '_user', avatar_style="big-smile")
-            message(st.session_state["generated"][i], key=str(i), avatar_style="thumbs")
+        #for i in range(len(st.session_state['generated'])):
+            #message(st.session_state["past"][i], is_user=True, key=str(i) + '_user', avatar_style="big-smile")
+            #message(st.session_state["generated"][i], key=str(i), avatar_style="thumbs")
+        message(st.session_state["past"][-1], is_user=True, key='user', avatar_style="open-peeps", seed="Harley")
+        message(st.session_state["generated"][-1], key='generated', avatar_style="bottts", seed="Mia")
 
 duration = time.perf_counter() - start_time
 print(f"Initiate and load chatbot: {duration}")

@@ -109,12 +109,6 @@ gptcache
 langchain
 llama-index
 
-# huggingface hub dependencies
-
-filelock
-fsspec
-huggingface_hub
-
 # openai dependencies
 
 aiosignal
@@ -126,11 +120,11 @@ et_xmlfile
 frozenlist
 joblib
 kiwisolver
-m2w64-gcc-libgfor~ # causes streamlit error
-m2w64-gcc-libs
-m2w64-gcc-libs-co~
-m2w64-gmp
-m2w64-libwinpthre~
+#m2w64-gcc-libgfor~ # causes streamlit error
+#m2w64-gcc-libs # causes streamlit error
+#m2w64-gcc-libs-co~ # causes streamlit error
+#m2w64-gmp # causes streamlit error
+#m2w64-libwinpthre~ # causes streamlit error
 matplotlib-base
 msys2-conda-epoch
 multidict
@@ -154,3 +148,7 @@ yarl
 
 # streamlit_chat dependencies
 streamlit-chat
+
+# nltk dependencies (for llama index keyword table)
+nltk
+regex

@@ -226,8 +226,7 @@ prompt_helper = PromptHelper(max_input_size, num_output, max_chunk_overlap)
 # define custom QuestionAnswerPrompt
 QA_SUM_PROMPT_TMPL = (
     "Given the news articles in the provided context, reply to {query_str}:"
-    "Reply in the language the question was asked in."
-    "Write a summary of the returned news articles."
+    "Write a summary of the returned news articles in Portuguese, unless the question was asked in English."
     "Use a friendly tone, and mention that you have summarised only three articles."
     "Try to use a bullet point per news article, and only use the information provided."
     "Try to include the associated link with the summary in each bullet point.\n"

@@ -120,13 +120,13 @@ et_xmlfile
 frozenlist
 joblib
 kiwisolver
-#m2w64-gcc-libgfor~ # causes streamlit error
-#m2w64-gcc-libs # causes streamlit error
-#m2w64-gcc-libs-co~ # causes streamlit error
-#m2w64-gmp # causes streamlit error
-#m2w64-libwinpthre~ # causes streamlit error
-#matplotlib-base # causes streamlit error
-msys2-conda-epoch
+#m2w64-gcc-libgfor~ # causes streamlit build error
+#m2w64-gcc-libs # causes streamlit build error
+#m2w64-gcc-libs-co~ # causes streamlit build error
+#m2w64-gmp # causes streamlit build error
+#m2w64-libwinpthre~ # causes streamlit build error
+#matplotlib-base # causes streamlit build error
+#msys2-conda-epoch # causes streamlit build error
 multidict
 openai
 openpyxl

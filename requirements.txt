@@ -125,7 +125,7 @@ kiwisolver
 #m2w64-gcc-libs-co~ # causes streamlit error
 #m2w64-gmp # causes streamlit error
 #m2w64-libwinpthre~ # causes streamlit error
-matplotlib-base
+#matplotlib-base # causes streamlit error
 msys2-conda-epoch
 multidict
 openai

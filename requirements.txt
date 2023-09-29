@@ -113,7 +113,7 @@ llama-index==0.6.1
 #aiohttp
 #dataclasses_json
 #gptcache
-#langchain
+langchain==0.0.154
 #llama-index
 
 # openai dependencies

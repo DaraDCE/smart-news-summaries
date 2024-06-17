@@ -147,7 +147,7 @@ openai==0.27.4
 #scipy
 #sentry-sdk
 #setproctitle
-#tenacity
+tenacity==8.3.0
 #threadpoolctl
 #tqdm
 #types-pytz

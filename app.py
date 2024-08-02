@@ -246,7 +246,7 @@ mock_service_context = ServiceContext.from_defaults(llm_predictor=mock_llm_predi
 ## openai/gpt-3.5-turbo
 # define LLM to use (gpt-3.5-turbo == $0.002 / 1K tokens)
 #llm = ChatOpenAI(temperature=0.1, model_name="gpt-3.5-turbo")
-gpt = ChatOpenAI(temperature=0.1, model_name="gpt-3.5-turbo")
+gpt = ChatOpenAI(temperature=0.1, model_name="gpt-4o-mini")
 
 # configure llm for llama-index
 llm=gpt
